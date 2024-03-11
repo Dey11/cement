@@ -9,7 +9,9 @@ const app: Express = express();
 // app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-connectToDb(process.env.URI!);
+connectToDb(process.env.URI!).then(() => {
+  console.log("MongoDB connected");
+});
 
 const PORT = process.env.PORT || 3000;
 
