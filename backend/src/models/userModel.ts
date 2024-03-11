@@ -1,10 +1,5 @@
 import mongoose from "mongoose";
-
-interface IUser {
-  email: string;
-  password: string;
-  name: string;
-}
+import { IUser } from "../types/user";
 
 const userSchema = new mongoose.Schema<IUser>({
   email: {

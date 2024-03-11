@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import userModel from "../models/userModel";
 import { Request, Response } from "express";
+import { IUser } from "../types/user";
 
 dotenv.config();
 
@@ -10,12 +11,13 @@ const secret = process.env.SECRET as string;
 const salt = bcrypt.genSaltSync(10);
 
 export const register = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { email, password, name } = req.body;
   try {
     const hashedPassword = bcrypt.hashSync(password, salt);
-    const newUser = {
+    const newUser: IUser = {
       email,
       password: hashedPassword,
+      name,
     };
 
     await userModel.create(newUser);
@@ -38,7 +40,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     const newToken = jwt.sign(
-      { email, password, name: userInDb?.name },
+      { email, password: userInDb!.password, name: userInDb?.name },
       secret
     );
     res.status(200).json({
