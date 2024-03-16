@@ -3,7 +3,7 @@ import React from "react";
 const Literature = () => {
   return (
     <div className=" ">
-      <div>
+      <div className="mb-10">
         <p className="text-2xl font-semibold mb-3 underline underline-offset-4">
           LITERATURE SURVEY:
         </p>
@@ -32,7 +32,7 @@ const Literature = () => {
         <p className="text-2xl font-semibold my-3 underline underline-offset-4">
           Cement Production Process:
         </p>
-        <p className="leading-relaxed text-justify text-lg">
+        <p className="leading-relaxed text-justify text-lg pb-3">
           The production of cement entails the extraction of raw materials via
           quarrying or blasting, encompassing robust formations such as
           limestone, slates, and shales, alongside softer materials like chalk
@@ -48,45 +48,58 @@ const Literature = () => {
           breakdown in wash mills. Precision control over chemical composition
           is achieved through discerning quarrying and meticulous management of
           raw materials. The mixing process entails amalgamating materials
-          sourced from various batches. The combustion process occurs within
-          rotary kilns, with temperatures ranging from 1,350 to 1,550°C.
-          Measures such as cyclone arrestors, bag-filter systems, or
-          electrostatic dust precipitators are employed to mitigate dust
-          emissions. Modern cement facilities are equipped with sophisticated
+          sourced from various batches.{" "}
+        </p>
+        <p className="leading-relaxed text-justify text-lg pb-3">
+          The combustion process occurs within rotary kilns, with temperatures
+          ranging from 1,350 to 1,550°C. Measures such as cyclone arrestors,
+          bag-filter systems, or electrostatic dust precipitators are employed
+          to mitigate dust emissions.
+        </p>
+        <p className="leading-relaxed text-justify text-lg pb-3">
+          Modern cement facilities are equipped with sophisticated
           instrumentation for process optimization. Grinding involves
           pulverizing clinker and gypsum into a fine powder using horizontal
           mills, with large rotary kilns achieving outputs surpassing 5,000 tons
-          per day. Temperature: 1,350 to 1,550°C (2,460 to 2,820°F) Water
-          content in slurry: 35 to 45% Reduced water content before kiln
-          feeding: 20 to 30% Water content in nodules for semidry process: 10 to
-          15%.
-        </p>{" "}
+          per day.
+        </p>
+        <ul className="leading-relaxed text-justify text-lg pb-3 list-disc">
+          <li>Temperature: 1,350 to 1,550°C (2,460 to 2,820°F)</li>
+          <li>Water content in slurry: 35 to 45%</li>
+          <li>Reduced water content before kiln feeding: 20 to 30%</li>
+          <li>Water content in nodules for semidry process: 10 to 15%.</li>
+        </ul>{" "}
         <p className="text-2xl font-semibold my-3 underline underline-offset-4">
           Dataset Description (Processing and analysis):
         </p>
-        <p className="leading-relaxed text-justify text-lg">
+        <p className="leading-relaxed text-justify text-lg pb-3">
           In this research, we investigate the predictive factors influencing
           concrete compressive strength through a comprehensive analysis of
-          diverse input variables. The Dataset [7] comprises quantitative
-          measurements of essential components, including Cement (component 1),
-          Blast Furnace Slag (component 2), Fly Ash (component 3), Water
-          (component 4), Superplasticizer (component 5), Coarse Aggregate
-          (component 6), and Fine Aggregate (component 7), all measured in
-          kilograms within a cubic meter mixture. Additionally, the Age variable
-          is quantified in days (ranging from 1 to 365). The primary focus is on
-          understanding the relationship between these input variables and the
-          Concrete Compressive Strength, the output variable measured in
-          megapascals (MPa). The regression problem at hand seeks to unveil
-          patterns and correlations, providing valuable insights into optimizing
-          concrete mixtures for enhanced compressive strength, thus contributing
-          to advancements in construction materials and practices. For a concise
-          point: The research investigates the correlation between diverse input
-          variables, such as Cement, Blast Furnace Slag, Fly Ash, Water,
-          Superplasticizer, Coarse Aggregate, Fine Aggregate, and Age, measured
-          in kilograms and days, with the Concrete Compressive Strength,
-          measured in megapascals. The objective is to uncover patterns that can
-          inform optimized concrete mixtures for improved compressive strength
-          in construction applications.
+          diverse input variables.{" "}
+        </p>
+        <p className="leading-relaxed text-justify text-lg pb-3">
+          The Dataset [7] comprises quantitative measurements of essential
+          components, including Cement (component 1), Blast Furnace Slag
+          (component 2), Fly Ash (component 3), Water (component 4),
+          Superplasticizer (component 5), Coarse Aggregate (component 6), and
+          Fine Aggregate (component 7), all measured in kilograms within a cubic
+          meter mixture. Additionally, the Age variable is quantified in days
+          (ranging from 1 to 365). The primary focus is on understanding the
+          relationship between these input variables and the Concrete
+          Compressive Strength, the output variable measured in megapascals
+          (MPa). The regression problem at hand seeks to unveil patterns and
+          correlations, providing valuable insights into optimizing concrete
+          mixtures for enhanced compressive strength, thus contributing to
+          advancements in construction materials and practices.
+        </p>
+        <p className="leading-relaxed text-justify text-lg">
+          For a concise point: The research investigates the correlation between
+          diverse input variables, such as Cement, Blast Furnace Slag, Fly Ash,
+          Water, Superplasticizer, Coarse Aggregate, Fine Aggregate, and Age,
+          measured in kilograms and days, with the Concrete Compressive
+          Strength, measured in megapascals. The objective is to uncover
+          patterns that can inform optimized concrete mixtures for improved
+          compressive strength in construction applications.
         </p>
       </div>
     </div>
