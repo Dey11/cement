@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Abstract from "./pages/Abstract";
 import RootLayout from "./layouts/RootLayout";
 import Literature from "./pages/Literature";
+import AboutUs from "./pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/literature",
         element: <Literature />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
       },
     ],
   },
