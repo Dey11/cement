@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import userModel from "../models/userModel";
 import { Request, Response } from "express";
 import { IUser } from "../types/user";
+import { error } from "console";
 
 dotenv.config();
 
@@ -32,10 +33,12 @@ export const login = async (req: Request, res: Response) => {
   try {
     const userInDb = await userModel.findOne({ email });
     if (!userInDb) {
+      throw error;
       res.status(400).json({ message: "User does not exist in DB." });
     }
     const isPasswordCorrect = bcrypt.compareSync(password, userInDb!.password);
     if (!isPasswordCorrect) {
+      throw error;
       res.status(400).json({ message: "Incorrect password." });
     }
 
@@ -62,9 +65,9 @@ export const profile = async (req: Request, res: Response) => {
   const { token } = req.body;
   try {
     if (!token) {
+      throw error;
       res.status(400).json({ message: "Token not found." });
     }
-
     const decode = jwt.verify(token, secret);
     res.status(200).json({ message: "User is logged in.", decode });
   } catch (err) {
