@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { authState } from "../state/atoms/authState";
+import axios from "axios";
 
 const Header = () => {
+  const [isLoggedInState, setIsLoggedInState] = useRecoilState(authState);
+
+  const checkToken = async () => {
+    const token = localStorage.getItem("token");
+    const response = await axios.post("http://localhost:3000/auth/profile", {
+      token,
+    });
+    // console.log(response.data);
+    setIsLoggedInState({
+      token: null,
+      name: response.data.decode.name,
+      email: response.data.decode.email,
+    });
+  };
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
   return (
     <div className="mb-8">
       <div className="flex justify-between items-center text-lg font-semibold">
@@ -17,7 +39,7 @@ const Header = () => {
               Abstract
             </div>
           </Link>
-          <Link to="/model">
+          <Link to="/analyze">
             <div className=" hover:bg-[#3c3d3d] px-2 rounded py-1">Analyze</div>
           </Link>
           <Link to="/about">
@@ -26,9 +48,15 @@ const Header = () => {
             </div>
           </Link>
           <Link to="/register">
-            <div className="bg-[#f7f8f7] text-[#1e1f1f] px-2 py-1 rounded-md hover:bg-[#aeb2b2]">
-              Register
-            </div>
+            {isLoggedInState.name ? (
+              <div className="bg-[#f7f8f7] text-[#1e1f1f] px-2 py-1 rounded-md hover:bg-[#aeb2b2]">
+                {isLoggedInState.name}
+              </div>
+            ) : (
+              <div className="bg-[#f7f8f7] text-[#1e1f1f] px-2 py-1 rounded-md hover:bg-[#aeb2b2]">
+                Login | Register
+              </div>
+            )}
           </Link>
         </div>
       </div>

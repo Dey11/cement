@@ -1,9 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 import Home from "./pages/Home";
 import Abstract from "./pages/Abstract";
 import RootLayout from "./layouts/RootLayout";
 import Literature from "./pages/Literature";
 import AboutUs from "./pages/AboutUs";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Analyze from "./pages/Analyze";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,18 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutUs />,
       },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/analyze",
+        element: <Analyze />,
+      },
     ],
   },
 ]);
@@ -33,7 +49,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <RecoilRoot>
+        <RouterProvider router={router} />
+      </RecoilRoot>
     </>
   );
 }

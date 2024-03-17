@@ -51,9 +51,9 @@ const Home = () => {
             For more information on our approach towards solving this problem,
             read our{" "}
             <Link to="/literature">
-              <p className="underline underline-offset-4 font-semibold text-lg hover:text-[#aeb2b2] inline">
+              <span className="underline underline-offset-4 font-semibold text-lg hover:text-[#aeb2b2] inline">
                 Literature Review
-              </p>
+              </span>
             </Link>
             .
           </p>
